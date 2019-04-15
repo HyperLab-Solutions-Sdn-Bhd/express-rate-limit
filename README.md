@@ -14,7 +14,7 @@ If you need a more robust solution, I recommend adding the [Redis Store][rate-li
 ## Install
 
 ```sh
-$ npm install --save express-rate-limit
+$ npm install --save @hyperlab-solutions/express-rate-limit
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ $ npm install --save express-rate-limit
 For an API-only server where the rate-limiter should be applied to all requests:
 
 ```js
-var RateLimit = require('express-rate-limit');
+var RateLimit = require('@hyperlab-solutions/express-rate-limit');
 
 app.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
 
@@ -39,7 +39,7 @@ app.use(limiter);
 For a "regular" web server (e.g. anything that uses `express.static()`), where the rate-limiter should only apply to certain requests:
 
 ```js
-var RateLimit = require('express-rate-limit');
+var RateLimit = require('@hyperlab-solutions/express-rate-limit');
 
 app.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
 
@@ -57,7 +57,7 @@ app.use('/api/', apiLimiter);
 Create multiple instances to apply different rules to different routes:
 
 ```js
-var RateLimit = require('express-rate-limit');
+var RateLimit = require('@hyperlab-solutions/express-rate-limit');
 
 app.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS if you use an ELB, custom Nginx setup, etc)
 
